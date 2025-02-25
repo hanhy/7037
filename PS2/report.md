@@ -16,7 +16,7 @@ After reading the parquet file, we processed the data. The `date` column is then
 ## Q2
 The correlation of intraday, overnight momentum and regular momentum is shown in the following table:
 
-<img width="799" alt="Screenshot 2025-02-26 at 00 55 50" src="https://github.com/user-attachments/assets/c64daa1f-6190-4515-b349-7afbbb69e156" />
+<img width="799" alt="Correlation table" src="https://github.com/user-attachments/assets/92e6cd9d-fcfc-492e-9c1f-b746dfd46a39" />
 
 _Table: Correlation of intraday, overnight momentum and regular momentum_
 
@@ -31,15 +31,15 @@ The function `calculate_portfolios_and_pnl` is designed to compute portfolio ret
 
 After calculating portfolios and PNL for each portfolio, we produced 3 tables for portfolio sorted by regular momentum, intraday momentum and overnight momentum respectively. Here are the results:
 
-![img_1](https://github.com/user-attachments/assets/0feebf63-7595-4f0d-be65-599e3b8a54ce)
+<img width="987" alt="Table for portfolio sorted by regular momentum" src="https://github.com/user-attachments/assets/5a750f17-5e2f-4edf-a1e2-900e3ac9b56d" />
 
 _Table for portfolio sorted by regular momentum_
 
-![img_2](https://github.com/user-attachments/assets/1cda764a-25fc-41d4-a65a-a5113678391d)
+<img width="1107" alt="Table for portfolio sorted by intraday momentum" src="https://github.com/user-attachments/assets/131196f8-cc54-4063-b29c-ae5ce4963291" />
 
 _Table for portfolio sorted by intraday momentum_
 
-![img_3](https://github.com/user-attachments/assets/f376c09f-7528-430a-af4e-f54c484b726a)
+<img width="1113" alt="Table for portfolio sorted by overnight momentum" src="https://github.com/user-attachments/assets/cf2d1112-815c-42ea-850e-33212c6b3d15" />
 
 _Table for portfolio sorted by overnight momentum_
 
@@ -54,7 +54,7 @@ For regular momentum portfolio data, we first made a copy of the momentum portfo
 
 Besides, we also try to see the probability of other portfolios (bins 1 to 9) beating the market return. From the result, all bins from 1 to 9 are having lower probability of winning the market return than bin 10. Also, the average fraction of winner of all bins across all months is 49.46%, which is lower than bin 10. It shows that the portfolio with the highest momentum has a higher chance of beating the market return than other lower momentum's portfolios.
 
-![img_4](https://github.com/user-attachments/assets/e5bc24b9-2c15-49f5-92d9-3ca0ba5a1ffa)
+<img width="122" alt="Bin1to9" src="https://github.com/user-attachments/assets/ba70ed70-ca0a-41e2-a0f7-7f47f6d3763c" />
 
 _Table: Average fraction of winner from bin 1 to 9_
 
