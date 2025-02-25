@@ -16,7 +16,7 @@ After reading the parquet file, we processed the data. The `date` column is then
 ## Q2
 The correlation of intraday, overnight momentum and regular momentum is shown in the following table:
 
-![img.png](img.png)
+![img](https://github.com/user-attachments/assets/c35ce889-fdb4-4dab-bc16-e6bfc874708b)
 
 _Table: Correlation of intraday, overnight momentum and regular momentum_
 
@@ -31,15 +31,15 @@ The function `calculate_portfolios_and_pnl` is designed to compute portfolio ret
 
 After calculating portfolios and PNL for each portfolio, we produced 3 tables for portfolio sorted by regular momentum, intraday momentum and overnight momentum respectively. Here are the results:
 
-![img_1.png](img_1.png)
+![img_1](https://github.com/user-attachments/assets/0feebf63-7595-4f0d-be65-599e3b8a54ce)
 
 _Table for portfolio sorted by regular momentum_
 
-![img_2.png](img_2.png)
+![img_2](https://github.com/user-attachments/assets/1cda764a-25fc-41d4-a65a-a5113678391d)
 
 _Table for portfolio sorted by intraday momentum_
 
-![img_3.png](img_3.png)
+![img_3](https://github.com/user-attachments/assets/f376c09f-7528-430a-af4e-f54c484b726a)
 
 _Table for portfolio sorted by overnight momentum_
 
@@ -54,7 +54,7 @@ For regular momentum portfolio data, we first made a copy of the momentum portfo
 
 Besides, we also try to see the probability of other portfolios (bins 1 to 9) beating the market return. From the result, all bins from 1 to 9 are having lower probability of winning the market return than bin 10. Also, the average fraction of winner of all bins across all months is 49.46%, which is lower than bin 10. It shows that the portfolio with the highest momentum has a higher chance of beating the market return than other lower momentum's portfolios.
 
-![img_4.png](img_4.png)
+![img_4](https://github.com/user-attachments/assets/e5bc24b9-2c15-49f5-92d9-3ca0ba5a1ffa)
 
 _Table: Average fraction of winner from bin 1 to 9_
 
