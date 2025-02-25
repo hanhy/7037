@@ -16,7 +16,7 @@ After reading the parquet file, we processed the data. The `date` column is then
 ## Q2
 The correlation of intraday, overnight momentum and regular momentum is shown in the following table:
 
-![img](https://github.com/user-attachments/assets/c35ce889-fdb4-4dab-bc16-e6bfc874708b)
+<img width="799" alt="Screenshot 2025-02-26 at 00 55 50" src="https://github.com/user-attachments/assets/c64daa1f-6190-4515-b349-7afbbb69e156" />
 
 _Table: Correlation of intraday, overnight momentum and regular momentum_
 
