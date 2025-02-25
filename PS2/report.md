@@ -15,6 +15,7 @@ After reading the parquet file, we processed the data. The `date` column is then
 The correlation of intraday, overnight momentum and regular momentum is shown in the following table:
 
 ![img.png](img.png)
+
 _Table: Correlation of intraday, overnight momentum and regular momentum_
 
 The correlation matrix shows that intraday momentum has a positive correlation with regular momentum (0.5818) and a negative correlation with overnight momentum (-0.6637). Regular momentum and overnight momentum also exhibit a positive correlation of 0.1546. 
@@ -27,12 +28,15 @@ The function `calculate_portfolios_and_pnl` is designed to compute portfolio ret
 After calculating portfolios and PNL for each portfolio, we produced 3 tables for portfolio sorted by regular momentum, intraday momentum and overnight momentum respectively. Here are the results:
 
 ![img_1.png](img_1.png)
+
 _Table for portfolio sorted by regular momentum_
 
 ![img_2.png](img_2.png)
+
 _Table for portfolio sorted by intraday momentum_
 
 ![img_3.png](img_3.png)
+
 _Table for portfolio sorted by overnight momentum_
 
 Based on the tables produced, the intraday momentum predicts the intraday future returns more than the overnight returns. A hedge portfolio based on past one-month intraday returns earns an average EW intraday return of 4.939% per month with an associated t-statistic of 16.75. However, hedge portfolio based on past one-month intraday returns earns an average EW overnight return of -3.94% per month with an associated t-statistic of -21.658. The intraday momentum also predicts the total returns more than the overnight returns, but less than the intraday future returns.
