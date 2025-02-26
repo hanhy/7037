@@ -23,6 +23,9 @@ _Table: Correlation of intraday, overnight momentum and regular momentum_
 The correlation matrix shows that intraday momentum has a positive correlation with regular momentum (0.5818) and a negative correlation with overnight momentum (-0.6637). Regular momentum and overnight momentum also exhibit a positive correlation of 0.1546. 
 
 ## Q3
+The intraday_ret_month of HW2 equals intraday_ret_month derived from CRSP data. But it doesn't equal to mom_intraday value of HW2(The difference is -0.1605 - (-0.1168) = -0.0437). Next we change the different windows to check whether it's because of the window size.
+
+The adjusted intraday momentum for CRSP and HW2 is the same(-0.1483), which is still different from the value of mom_intraday of HW2(-0.1605 - (-0.1483) = -0.0122). So we can see that CRSP and HW2'data has the same logic and therefore they have the same intraday momentum. But this value is different from that of HW2's mom_intraday, which probably not a result of window size(because we have checked different window sizes, the result stays same) and thus indicates that HW2 data probably used a different data or adjust method to calculate the mom_intraday column.
 
 ## Q4
 We used `apply_quantiles` and `produce_table` functions provided in the starter code. Before we apply quantiles, we further processed the data. We first filtered out stocks in the bottom 20% of market capitalization and those with price less than 5. Then, we constructed 3 portfolios (each containing 10 deciles) by sorting data based on `mom`, `mom_intraday`, and `mom_overnight` respectively. To produce the required tables, we need to calculate portfolios and pnl (for long-short portfolio), so we define a function. 
@@ -65,6 +68,35 @@ The portfolios are necessary in our quant trading strategies because the portfol
 ## Q6
 
 ## Q7
+We have constructed three strategies:
+- A strategy combining both intraday and overnight factors (Main Strategy: Long 5-5 / Short 1-1).
+- A strategy considering only intraday momentum factors (Long 10 / Short 1).
+- A strategy considering only overnight momentum factors (Long 10 / Short 1).
+
+Comparison results:
+
+- **Overall performance of the main strategy**:
+  The EW and VW cumulative returns of the main strategy show significant growth over the long term (the P&L chart indicates an increase from 0 to approximately 30-35), indicating that the strategy performed very well during the sample period. Comparing to VWstrategy, the EW strategy (blue curve) exhibited the stronger growth.
+  The average monthly returns are 0.0137 (EW) and 0.0152 (VW), both positive, with Sharpe Ratios of 0.5711 (EW) and 0.4737 (VW), indicating a reasonable risk-adjusted return.
+
+- **Comparison of the main strategy with the two single-momentum factor strategies**:
+
+  - **Sharpe ratio comparison**:
+    The Intraday EW strategy (0.7302) outperforms the Main Strategy EW, suggesting that the intraday momentum may have greater potential for risk-adjusted returns.
+    The Overnight EW (-0.1177) performs poorly. For VW, the Main Strategy (0.4737) outperforms both Intraday (0.3035) and overnight (0.1133), indicating that the value-weighted main strategy is more stable.
+
+  - **Alpha comparison**:
+    Relative to intraday momentum, the EW Alpha is 0.0031 (t-stat 0.8621, not significant), and the VW Alpha is 0.0089 (t-stat 1.9711, nearly significant), indicating limited excess returns for the Main Strategy over intraday momentum.
+    Relative to overnight momentum, the EW Alpha is 0.0150 (t-stat 3.9481, significant), and the VW Alpha is 0.0135 (t-stat 2.5782, significant), demonstrating that the Main Strategy has a stronger predictive ability for overnight momentum.
+    After adding the FF5 factors, Alpha decreases slightly but remains significant (EW vs Overnight + FF5 Alpha 0.0127, t-stat 3.3387), indicating that the Main Strategy has independent excess returns not fully explained by FF5.
+
+- **P&L curve observation and analysis**:
+  The main strategy EW and VW curves exhibit significant volatility but trend upward overall, outperforming the Intraday VW and Overnight strategies (which show slower growth or negative returns), supporting the profitability of the Main Strategy.
+  The Intraday EW strategy (green) shows strong growth in the later period, possibly due to specific market conditions being more effective.
+
+- **Summary**:
+  - The main strategy (Long 5-5 / Short 1-1) performs very well, especially in EW form, with significant cumulative returns and a reasonable Sharpe Ratio.
+  - Based on the P&L and Alpha results, the strategy of Long high quantile 5-5 / Short low quintile 1-1 is profitable during the sample period and retains alpha even after controlling for FF5 factors, indicating it has some practical utility in quantitative trading.
 
 ## Q8
 
