@@ -85,6 +85,7 @@ This graph shows the impact of the combination of the two types of momentum on i
 1. In all overnight momentum groups, the explanatory power of intraday momentum within overnight momentum buckets is weak. There is no consistent increasing or decreasing trend. The returns change irregularly, and the returns of high - intraday - momentum groups may even be negative.
 2. Overnight momentum does not explain positive returns within intraday momentum buckets. Looking at the data in each row, the closer to the left, the larger the data. This indicates that in intraday momentum buckets, the smaller the overnight momentum, the greater the portfolio return. Overnight momentum shows a significant downward trend in all intraday momentum groups. Therefore, **
 3. Trend: The best - performing portfolio is with overnight momentum in the range of [0, 20%) and intraday momentum in the range of (80%, 100%]. This shows that the return of the portfolio does not increase as both momentums increase simultaneously. However, we can clearly observe that the color in the lower - left side of the graph is significantly darker, indicating that higher intraday momentum and lower overnight momentum can explain intraday returns.
+
 <img src="https://github.com/user-attachments/assets/ff58b4a3-fd9f-4d56-b86d-2aa82b2fa0e4" width="400" alt="ew">
 
 ### Equal Weighted-Overnight Return
@@ -92,6 +93,7 @@ This graph shows the impact of the combination of the two types of momentum on i
 1. In the overnight momentum buckets, the impact of intraday momentum is smaller than that of changes in overnight momentum. However, most portfolios within the [40% - 60%) range of intraday momentum have lower yields than other groups.
 2. In the intraday momentum buckets, the larger the overnight momentum, the greater the portfolio return.
 3. Trend: The investment decision with the highest yield occurs in the portfolio where the overnight momentum is in the range of [80%, 100%] and the intraday momentum is in the range of [0, 20%). This indicates that the portfolio return does not increase as both momentums increase simultaneously. However, it can be observed that the investment returns on the right side of the table are significantly higher than those on the left side, which shows that an increase in overnight momentum has a positive impact on portfolio returns.
+
 <img src="https://github.com/user-attachments/assets/0ed3b81f-545e-4f08-a3a0-e05d968429d7" width="400" alt="ew">
 
 ### Value Weighted-Total Return
@@ -106,6 +108,7 @@ This graph shows the impact of the combination of the two types of momentum on i
 1. The explanatory power of intraday momentum within overnight momentum buckets is weak, and there is no consistent increasing or decreasing trend. The returns change irregularly, and the returns of high - intraday - momentum groups may even deteriorate (for example, in the 0 - 20% and 80 - 100% overnight - momentum groups).
 2. Overnight momentum shows a significant downward trend in all intraday - momentum groups (the returns of high - overnight - momentum groups get worse). Therefore, overnight momentum does not explain positive returns within intraday - momentum buckets. Instead, it is associated with lower intraday returns.
 3. Trend: The rate of return does not increase as both momentums increase. However, when the overnight momentum is in the range of [0, 20%], the average rate of return will increase as the intraday momentum increases.
+
 <img src="https://github.com/user-attachments/assets/aa4df577-cb2d-4e9e-b700-7137324ce737" width="400" alt="ew">
 
 ### Value Weighted-Overnight Return
@@ -113,6 +116,7 @@ This graph shows the impact of the combination of the two types of momentum on i
 1. Intraday momentum explains the returns in some overnight momentum buckets (such as the 60 - 80% and 80 - 100% buckets), presenting a slightly upward trend. However, in the low overnight momentum groups (0 - 20% and 20 - 40%), the returns decline as the intraday momentum increases. Thus, the explanatory power of intraday momentum for overnight returns is inconsistent.
 2. Overnight momentum shows a significant upward trend across all intraday momentum groups (higher overnight momentum groups yield higher returns). Therefore, overnight momentum does explain the overnight returns within the intraday momentum buckets.
 3. Trend: Overall, as both types of momentum increase, the returns gradually improve.
+
 <img src="https://github.com/user-attachments/assets/251c11b0-e90e-4c36-8971-a204451d559c" width="400" alt="ew">
 
 ## Q6
