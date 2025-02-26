@@ -94,7 +94,9 @@ This graph shows the impact of the combination of the two types of momentum on i
 2. In the intraday momentum buckets, the larger the overnight momentum, the greater the portfolio return.
 3. Trend: The investment decision with the highest yield occurs in the portfolio where the overnight momentum is in the range of [80%, 100%] and the intraday momentum is in the range of [0, 20%). This indicates that the portfolio return does not increase as both momentums increase simultaneously. However, it can be observed that the investment returns on the right side of the table are significantly higher than those on the left side, which shows that an increase in overnight momentum has a positive impact on portfolio returns.
 
+
 <img src="https://github.com/user-attachments/assets/0ed3b81f-545e-4f08-a3a0-e05d968429d7" width="400" alt="ew">
+
 
 ### Value Weighted-Total Return
 
