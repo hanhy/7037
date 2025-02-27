@@ -177,6 +177,40 @@ Comparison results:
   - The main strategy (Long 5-5 / Short 1-1) performs very well, especially in EW form, with significant cumulative returns and a reasonable Sharpe Ratio.
   - Based on the P&L and Alpha results, the strategy of Long high quantile 5-5 / Short low quintile 1-1 is profitable during the sample period and retains alpha even after controlling for FF5 factors, indicating it has some practical utility in quantitative trading.
 
-## Q8
+## Q8 (Extra Points)
+
+In this problem, Fama-MacBeth regression is divided into two stages: the first step is to perform cross-sectional regression at each time point (such as each month) to obtain the coefficients of each independent variable; the second step is to average these coefficients over the time series and calculate the standard error and t statistic. Finally, use the overnight return to regress the future return at each time point, and then summarize the results.
+
+### 8.1 Overnight Returns → Future Returns
+- **Use the Fama-MacBeth regression model, use overnight_ret_month to predict future returns, Calculate the correlation coefficient and t statistic for regression，the result is**:
+<img width="167" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/858a40d1-ca53-4005-9cf8-a6d71329bf5e" />
+
+- **In order to intuitively display the regression results and the relationship between the coefficients, visualization is performed to draw a line graph of the coefficients changing over time：**:
+<img src="https://github.com/user-attachments/assets/e1c37406-e957-4d9f-b0a4-5eca8253d13f" width="400" alt="ew">
+
+- **Based on the time series visualization results of the Fama-MacBeth regression coefficient, the following typical characteristics can be observed**:
+
+   - **Overall stability**:
+    In most time periods (about 90% of the observation period), the regression coefficient fluctuates narrowly in the range of [-0.2, 0.2], indicating that the predictive ability of overnight returns on future returns presents a relatively stable weak correlation.
+   - **Extreme outliers**:
+   Around 1940, the coefficient plummeted to an extreme value of -1.2, forming a significant outlier (exceeding the mean ±5 standard deviations).
+   - **Volatility clustering**:
+    At key points such as 2001 (the bursting of the Internet bubble), 2014 (the Fed’s exit from QE), and 2020 (the impact of the COVID-19 pandemic), the coefficient showed abnormal fluctuations (amplitude exceeding ±0.5), showing obvious volatility clustering characteristics.
+
+The drivers of the volatility surge in 2001/2014/2020 are consistent with the cycle of major social events. The 9/11 terrorist attacks caused the market to shut down, the eurozone debt crisis fermented, and the COVID-19 epidemic triggered circuit breakers. These social events led to index volatility.
+
+### 8.2 Intraday → Future Returns
+
+In the second task, we implement Fama-MacBeth cross-sectional regression to study the impact of intraday momentum on returns and visualize it. Based on the regression of "overnight returns on future returns" we completed previously, the adjustment variable is the intraday momentum mom_intraday.
+
+- **Take "mom_intraday" as the independent variable and "future_ret" as the dependent variable, save the regression coefficients and form a time series, calculate the average coefficient, standard error and t statistics, as shown in the following figure:**
+<img width="173" alt="Q8 result2" src="https://github.com/user-attachments/assets/adac07ff-5fef-473b-b22b-5b1d2a7fa9e3" />
+
+- **Following the previous question, we visualize the relationship between the calculated regression coefficients in the same way and with the same criteria, marking the time points with large fluctuations for easy comparison and verification of the rules:**
+<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/fd3f0d14-7c85-4c89-ab46-cec892d5cf6e" />
+
+The regression results displayed in the visualization are similar to those in the previous question. The area of ​​the shadow area where the image fluctuates is almost the same as the previous result. They are also affected by social events and the conclusions are the same.
+
+### 8.3 MacBeth Regression Results with Interaction Term
 
 ## Q9
