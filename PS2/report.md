@@ -237,3 +237,33 @@ In this question, the above two variables are put into the regression model toge
 <img width="353" alt="Q8 result3" src="https://github.com/user-attachments/assets/ecbc7cd4-332d-4d0e-860d-ec1dc489d1b9" />
  
 ## Q9(Extra Points)
+**1. Day-of-the-Week Segmentation**
+- Segmentation:
+   - **Weekday vs. Weekend (for overnight returns)**
+   - **Intraday patterns across Monday–Friday**
+- Literature Support:
+   - **Cross (1973) and French (1980) documented the Weekend Effect, where overnight returns from Friday close to Monday open exhibit systematically lower returns compared to other weekdays, potentially due to risk-averse investors reducing positions ahead of weekend uncertainty.**
+   - **Birru (2018) found that intraday momentum is stronger on Mondays and Fridays, linked to institutional rebalancing and retail investor attention cycles.**
+- Theoretical Basis:
+   - **Behavioral Factors: Weekend anxiety and institutional trading schedules drive differential information processing.**
+   - **Liquidity Cycles: Lower liquidity during weekends amplifies overnight pricing inefficiencies.ds**
+ 
+**2. Turn-of-the-Month (TOTM) vs. Non-TOTM Periods**
+- Segmentation:
+   - **Last 3 trading days of the month (TOTM) vs other days**
+- Literature Support:
+   - **Ariel (1987) and Lakonishok & Smidt (1988) identified the Turn-of-the-Month Effect, where overnight returns during TOTM periods are significantly higher, driven by institutional fund flows (e.g., pension contributions).**
+   - **Lou et al. (2019) showed that intraday momentum during TOTM is weaker due to institutional window dressing activities crowding out retail traders.**
+- Theoretical Basis:
+   - **Institutional Mandates: Portfolio rebalancing and window dressing at month-end dominate overnight price formation.**
+   - **Retail vs. Institutional Clientele: Intraday liquidity shocks arise from conflicting trading motives.**
+
+**3. Macroeconomic Announcement Windows**
+- Segmentation:
+   - **Overnight returns pre-announcement vs. intraday returns post-announcement**
+- Literature Support:
+   - **Savor & Wilson (2013) demonstrated that overnight returns around Federal Reserve announcements capture pre-event uncertainty resolution, while intraday returns reflect post-announcement price discovery.**
+   - **Bogousslavsky et al. (2020) found that overnight returns before CPI/NFP releases predict post-announcement intraday reversals, suggesting informed traders act during off-hours.**
+- Theoretical Basis:
+   - **Information Asymmetry: Institutional investors trade on private information during low-volume overnight periods.**
+   - **Efficient Market Hypothesis (EMH) Violation: Public news is only partially incorporated into prices overnight.**
