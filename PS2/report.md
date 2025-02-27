@@ -233,7 +233,7 @@ In this question, the above two variables are put into the regression model toge
 - **Right figure (marginal effect of intraday momentum):**
   When overnight return exceeds +1.2σ, ​​the marginal effect of intraday momentum turns negative; Shows obvious nonlinear characteristics: the positive effect is stronger in the low overnight return range.
 
-### restate the result for 3 regressions:
+### Restate the result for 3 regressions:
 <img width="353" alt="Q8 result3" src="https://github.com/user-attachments/assets/ecbc7cd4-332d-4d0e-860d-ec1dc489d1b9" />
  
 ## Q9(Extra Points)
