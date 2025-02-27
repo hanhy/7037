@@ -209,8 +209,31 @@ In the second task, we implement Fama-MacBeth cross-sectional regression to stud
 - **Following the previous question, we visualize the relationship between the calculated regression coefficients in the same way and with the same criteria, marking the time points with large fluctuations for easy comparison and verification of the rules:**
 <img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/fd3f0d14-7c85-4c89-ab46-cec892d5cf6e" />
 
-The regression results displayed in the visualization are similar to those in the previous question. The area of ​​the shadow area where the image fluctuates is almost the same as the previous result. They are also affected by social events and the conclusions are the same.
+- **The regression results displayed in the visualization are similar to those in the previous question. The area of ​​the shadow area where the image fluctuates is almost the same as the previous result. They are also affected by social events and the conclusions are the same.**
 
 ### 8.3 MacBeth Regression Results with Interaction Term
 
-## Q9
+In this question, the above two variables are put into the regression model together, and their interaction terms are added to calculate the regression results and parameters. Compare the changes in coefficients of single variables and after adding interaction terms, and test the significance of interaction terms. In the regression at each time point, it is necessary to include overnight returns, intraday momentum and their interaction terms. Then, calculate the average and t-statistic of these coefficients.
+
+- **Generate a result table and visualize the time series of the coefficients. The three sub-graphs show the time series of each coefficient respectively, and the X-axis uniformly uses date labels with a 5-year interval:**
+<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/8b923b62-12ef-4945-9f31-35e57f527ff8" />
+
+- **By comparing the results of the single factor model and the interaction model, the existence of the substitution effect can be verified**:
+
+   - **Coefficients**:
+     The coefficients of overnight returns and intraday momentum decreased by 26.2% and 21.7% respectively after adding the interaction term, indicating that there is collinearity between the two.
+   - **Interaction**:
+   The interaction term explains about 20% of the predictive power of the cause, proving that the substitution effect cannot be ignored.
+
+- **The regression results show that the coefficient of the interaction term is significantly negative, which indicates that there is a substitution effect between overnight returns and intraday momentum in predicting future returns. Therefore, Our team further uses conditional marginal effects to accurately explain the factor impact and visualizes the results：**
+<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/7eb94e6a-44ac-4c36-ae5a-6e4587252757"/>
+
+- **Left figure (marginal effect of overnight return)**:
+  When intraday momentum increases (horizontal axis moves to the right), the predictive ability of overnight return continues to decline; When intraday momentum exceeds +0.6, the marginal effect approaches zero (strategy failure critical point)
+- **Right figure (marginal effect of intraday momentum):**
+  When overnight return exceeds +1.2σ, ​​the marginal effect of intraday momentum turns negative; Shows obvious nonlinear characteristics: the positive effect is stronger in the low overnight return range.
+
+### restate the result for 3 regressions:
+<img width="353" alt="Q8 result3" src="https://github.com/user-attachments/assets/ecbc7cd4-332d-4d0e-860d-ec1dc489d1b9" />
+ 
+## Q9(Extra Points)
