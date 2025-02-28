@@ -1,5 +1,7 @@
 # PS2
 
+3035707932 Liu Man Siu;  3036357332 YU HAOYANG;  3036354110 Han Huiyang;  3036360494 Ma Kunmao
+
 ## Q1
 
 Earnings of companies are typically announced outside of market hours. This practice allows investors time to digest the information and react in an orderly manner when the market reopens, reducing the risk of extreme volatility during trading hours. Stock prices for famous firms may often surge before post-close earnings announcements but then drop after the announcement, according to the research paper published by Harvard Business School in 2023.
@@ -101,7 +103,7 @@ This graph shows the impact of the combination of the two types of momentum on i
 1. In most overnight momentum groups (especially the 60 - 80% and 80 - 100% groups), as the intraday momentum increases, the total return shows a slight to obvious increasing trend. Therefore, on average, intraday momentum does explain the total return within the overnight momentum buckets, and this effect is more significant especially in the high - overnight - momentum groups.
 2. In each intraday momentum group, as the overnight momentum increases, the total return shows a slight to obvious increasing trend (this is more prominent especially in the 60 - 80% and 80 - 100% intraday momentum groups).
 3. Trend: As both intraday momentum and overnight momentum increase together, the returns of the strategy show a clear increasing trend, indicating that the returns of the strategy are becoming more and more profitable.
-   
+
 <img src="https://github.com/user-attachments/assets/d486d5a2-cc50-4186-99be-ba972ced7eaa" width="400" alt="ew">
 
 ### Value Weighted-Intraday Return
@@ -183,19 +185,18 @@ Comparison results:
 In this problem, Fama-MacBeth regression is divided into two stages: the first step is to perform cross-sectional regression at each time point (such as each month) to obtain the coefficients of each independent variable; the second step is to average these coefficients over the time series and calculate the standard error and t statistic. Finally, use the overnight return to regress the future return at each time point, and then summarize the results.
 
 ### 8.1 Overnight Returns → Future Returns
+
 - **Use the Fama-MacBeth regression model, use overnight_ret_month to predict future returns, Calculate the correlation coefficient and t statistic for regression，the result is**:
-<img width="167" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/858a40d1-ca53-4005-9cf8-a6d71329bf5e" />
-
+  `<img width="167" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/858a40d1-ca53-4005-9cf8-a6d71329bf5e" />`
 - **In order to intuitively display the regression results and the relationship between the coefficients, visualization is performed to draw a line graph of the coefficients changing over time：**:
-<img src="https://github.com/user-attachments/assets/e1c37406-e957-4d9f-b0a4-5eca8253d13f" width="400" alt="ew">
-
+  `<img src="https://github.com/user-attachments/assets/e1c37406-e957-4d9f-b0a4-5eca8253d13f" width="400" alt="ew">`
 - **Based on the time series visualization results of the Fama-MacBeth regression coefficient, the following typical characteristics can be observed**:
 
-   - **Overall stability**:
+  - **Overall stability**:
     In most time periods (about 90% of the observation period), the regression coefficient fluctuates narrowly in the range of [-0.2, 0.2], indicating that the predictive ability of overnight returns on future returns presents a relatively stable weak correlation.
-   - **Extreme outliers**:
-   Around 1940, the coefficient plummeted to an extreme value of -1.2, forming a significant outlier (exceeding the mean ±5 standard deviations).
-   - **Volatility clustering**:
+  - **Extreme outliers**:
+    Around 1940, the coefficient plummeted to an extreme value of -1.2, forming a significant outlier (exceeding the mean ±5 standard deviations).
+  - **Volatility clustering**:
     At key points such as 2001 (the bursting of the Internet bubble), 2014 (the Fed’s exit from QE), and 2020 (the impact of the COVID-19 pandemic), the coefficient showed abnormal fluctuations (amplitude exceeding ±0.5), showing obvious volatility clustering characteristics.
 
 The drivers of the volatility surge in 2001/2014/2020 are consistent with the cycle of major social events. The 9/11 terrorist attacks caused the market to shut down, the eurozone debt crisis fermented, and the COVID-19 epidemic triggered circuit breakers. These social events led to index volatility.
@@ -205,66 +206,66 @@ The drivers of the volatility surge in 2001/2014/2020 are consistent with the cy
 In the second task, we implement Fama-MacBeth cross-sectional regression to study the impact of intraday momentum on returns and visualize it. Based on the regression of "overnight returns on future returns" we completed previously, the adjustment variable is the intraday momentum mom_intraday.
 
 - **Take "mom_intraday" as the independent variable and "future_ret" as the dependent variable, save the regression coefficients and form a time series, calculate the average coefficient, standard error and t statistics, as shown in the following figure:**
-<img width="173" alt="Q8 result2" src="https://github.com/user-attachments/assets/adac07ff-5fef-473b-b22b-5b1d2a7fa9e3" />
-
+  `<img width="173" alt="Q8 result2" src="https://github.com/user-attachments/assets/adac07ff-5fef-473b-b22b-5b1d2a7fa9e3" />`
 - **Following the previous question, we visualize the relationship between the calculated regression coefficients in the same way and with the same criteria, marking the time points with large fluctuations for easy comparison and verification of the rules:**
-<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/fd3f0d14-7c85-4c89-ab46-cec892d5cf6e" />
-
-- **The regression results displayed in the visualization are similar to those in the previous question. The area of ​​the shadow area where the image fluctuates is almost the same as the previous result. They are also affected by social events and the conclusions are the same.**
+  `<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/fd3f0d14-7c85-4c89-ab46-cec892d5cf6e" />`
+- **The regression results displayed in the visualization are similar to those in the previous question. The area of the shadow area where the image fluctuates is almost the same as the previous result. They are also affected by social events and the conclusions are the same.**
 
 ### 8.3 MacBeth Regression Results with Interaction Term
 
 In this question, the above two variables are put into the regression model together, and their interaction terms are added to calculate the regression results and parameters. Compare the changes in coefficients of single variables and after adding interaction terms, and test the significance of interaction terms. In the regression at each time point, it is necessary to include overnight returns, intraday momentum and their interaction terms. Then, calculate the average and t-statistic of these coefficients.
 
 - **Generate a result table and visualize the time series of the coefficients. The three sub-graphs show the time series of each coefficient respectively, and the X-axis uniformly uses date labels with a 5-year interval:**
-<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/8b923b62-12ef-4945-9f31-35e57f527ff8" />
-
+  `<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/8b923b62-12ef-4945-9f31-35e57f527ff8" />`
 - **By comparing the results of the single factor model and the interaction model, the existence of the substitution effect can be verified**:
 
-   - **Coefficients**:
-     The coefficients of overnight returns and intraday momentum decreased by 26.2% and 21.7% respectively after adding the interaction term, indicating that there is collinearity between the two.
-   - **Interaction**:
-   The interaction term explains about 20% of the predictive power of the cause, proving that the substitution effect cannot be ignored.
-
+  - **Coefficients**:
+    The coefficients of overnight returns and intraday momentum decreased by 26.2% and 21.7% respectively after adding the interaction term, indicating that there is collinearity between the two.
+  - **Interaction**:
+    The interaction term explains about 20% of the predictive power of the cause, proving that the substitution effect cannot be ignored.
 - **The regression results show that the coefficient of the interaction term is significantly negative, which indicates that there is a substitution effect between overnight returns and intraday momentum in predicting future returns. Therefore, Our team further uses conditional marginal effects to accurately explain the factor impact and visualizes the results：**
-<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/7eb94e6a-44ac-4c36-ae5a-6e4587252757"/>
-
+  `<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/7eb94e6a-44ac-4c36-ae5a-6e4587252757"/>`
 - **Left figure (marginal effect of overnight return)**:
   When intraday momentum increases (horizontal axis moves to the right), the predictive ability of overnight return continues to decline; When intraday momentum exceeds +0.6, the marginal effect approaches zero (strategy failure critical point)
 - **Right figure (marginal effect of intraday momentum):**
-  When overnight return exceeds +1.2σ, ​​the marginal effect of intraday momentum turns negative; Shows obvious nonlinear characteristics: the positive effect is stronger in the low overnight return range.
+  When overnight return exceeds +1.2σ, the marginal effect of intraday momentum turns negative; Shows obvious nonlinear characteristics: the positive effect is stronger in the low overnight return range.
 
 ### Restate the result for 3 regressions:
+
 <img width="353" alt="Q8 result3" src="https://github.com/user-attachments/assets/ecbc7cd4-332d-4d0e-860d-ec1dc489d1b9" />
- 
+
 ## Q9(Extra Points)
+
 **1. Day-of-the-Week Segmentation**
+
 - Segmentation:
-   - **Weekday vs. Weekend (for overnight returns)**
-   - **Intraday patterns across Monday–Friday**
+  - **Weekday vs. Weekend (for overnight returns)**
+  - **Intraday patterns across Monday–Friday**
 - Literature Support:
-   - **Cross (1973) and French (1980) documented the Weekend Effect, where overnight returns from Friday close to Monday open exhibit systematically lower returns compared to other weekdays, potentially due to risk-averse investors reducing positions ahead of weekend uncertainty.**
-   - **Birru (2018) found that intraday momentum is stronger on Mondays and Fridays, linked to institutional rebalancing and retail investor attention cycles.**
+  - **Cross (1973) and French (1980) documented the Weekend Effect, where overnight returns from Friday close to Monday open exhibit systematically lower returns compared to other weekdays, potentially due to risk-averse investors reducing positions ahead of weekend uncertainty.**
+  - **Birru (2018) found that intraday momentum is stronger on Mondays and Fridays, linked to institutional rebalancing and retail investor attention cycles.**
 - Theoretical Basis:
-   - **Behavioral Factors: Weekend anxiety and institutional trading schedules drive differential information processing.**
-   - **Liquidity Cycles: Lower liquidity during weekends amplifies overnight pricing inefficiencies.ds**
- 
+  - **Behavioral Factors: Weekend anxiety and institutional trading schedules drive differential information processing.**
+  - **Liquidity Cycles: Lower liquidity during weekends amplifies overnight pricing inefficiencies.ds**
+
 **2. Turn-of-the-Month (TOTM) vs. Non-TOTM Periods**
+
 - Segmentation:
-   - **Last 3 trading days of the month (TOTM) vs other days**
+  - **Last 3 trading days of the month (TOTM) vs other days**
 - Literature Support:
-   - **Ariel (1987) and Lakonishok & Smidt (1988) identified the Turn-of-the-Month Effect, where overnight returns during TOTM periods are significantly higher, driven by institutional fund flows (e.g., pension contributions).**
-   - **Lou et al. (2019) showed that intraday momentum during TOTM is weaker due to institutional window dressing activities crowding out retail traders.**
+  - **Ariel (1987) and Lakonishok & Smidt (1988) identified the Turn-of-the-Month Effect, where overnight returns during TOTM periods are significantly higher, driven by institutional fund flows (e.g., pension contributions).**
+  - **Lou et al. (2019) showed that intraday momentum during TOTM is weaker due to institutional window dressing activities crowding out retail traders.**
 - Theoretical Basis:
-   - **Institutional Mandates: Portfolio rebalancing and window dressing at month-end dominate overnight price formation.**
-   - **Retail vs. Institutional Clientele: Intraday liquidity shocks arise from conflicting trading motives.**
+  - **Institutional Mandates: Portfolio rebalancing and window dressing at month-end dominate overnight price formation.**
+  - **Retail vs. Institutional Clientele: Intraday liquidity shocks arise from conflicting trading motives.**
 
 **3. Macroeconomic Announcement Windows**
+
 - Segmentation:
-   - **Overnight returns pre-announcement vs. intraday returns post-announcement**
+  - **Overnight returns pre-announcement vs. intraday returns post-announcement**
 - Literature Support:
-   - **Savor & Wilson (2013) demonstrated that overnight returns around Federal Reserve announcements capture pre-event uncertainty resolution, while intraday returns reflect post-announcement price discovery.**
-   - **Bogousslavsky et al. (2020) found that overnight returns before CPI/NFP releases predict post-announcement intraday reversals, suggesting informed traders act during off-hours.**
+  - **Savor & Wilson (2013) demonstrated that overnight returns around Federal Reserve announcements capture pre-event uncertainty resolution, while intraday returns reflect post-announcement price discovery.**
+  - **Bogousslavsky et al. (2020) found that overnight returns before CPI/NFP releases predict post-announcement intraday reversals, suggesting informed traders act during off-hours.**
 - Theoretical Basis:
-   - **Information Asymmetry: Institutional investors trade on private information during low-volume overnight periods.**
-   - **Efficient Market Hypothesis (EMH) Violation: Public news is only partially incorporated into prices overnight.**
+  - **Information Asymmetry: Institutional investors trade on private information during low-volume overnight periods.**
+  - **Efficient Market Hypothesis (EMH) Violation: Public news is only partially incorporated into prices overnight.**
