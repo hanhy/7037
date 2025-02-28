@@ -89,17 +89,16 @@ The portfolios are necessary in our quant trading strategies because the portfol
 2. In all intraday momentum groups, as the overnight momentum increases, the total return shows a significant increasing trend. Therefore, overnight momentum does explain the total return within the intraday momentum buckets.
 3. Trend: As both intraday momentum and overnight momentum increase together, the returns of the strategy show a clear increasing trend. It indicates that the returns of the strategy are becoming more and more profitable.
 
-<img src="https://github.com/user-attachments/assets/0990c2a3-7358-455f-a3d2-dcaf40dbe607" width="400" alt="ew">
+![Q5](../graphic/5-ew.png)
 
 ### Equal Weighted-Intraday Return
 
-This graph shows the impact of the combination of the two types of momentum on intraday returns. We can see that, unlike the situation of total returns,  the average return of the portfolio in the lower - left corner is the highest, at 0.035%, and the average return in the upper - right corner is the lowest, at -0.023%.
 
 1. In all overnight momentum groups, the explanatory power of intraday momentum within overnight momentum buckets is weak. There is no consistent increasing or decreasing trend. The returns change irregularly, and the returns of high - intraday - momentum groups may even be negative.
 2. Overnight momentum does not explain positive returns within intraday momentum buckets. Looking at the data in each row, the closer to the left, the larger the data. This indicates that in intraday momentum buckets, the smaller the overnight momentum, the greater the portfolio return. Overnight momentum shows a significant downward trend in all intraday momentum groups.
 3. Trend: The best - performing portfolio is with overnight momentum in the range of [0, 20%) and intraday momentum in the range of (80%, 100%]. This shows that the return of the portfolio does not increase as both momentums increase simultaneously. However, we can clearly observe that the color in the lower - left side of the graph is significantly darker, indicating that higher intraday momentum and lower overnight momentum can explain intraday returns.
 
-<img src="https://github.com/user-attachments/assets/ff58b4a3-fd9f-4d56-b86d-2aa82b2fa0e4" width="400" alt="ew">
+![Q5](../graphic/5_ew_intraday.png)
 
 ### Equal Weighted-Overnight Return
 
@@ -107,7 +106,8 @@ This graph shows the impact of the combination of the two types of momentum on i
 2. In the intraday momentum buckets, the larger the overnight momentum, the greater the portfolio return.
 3. Trend: The investment decision with the highest yield occurs in the portfolio where the overnight momentum is in the range of [80%, 100%] and the intraday momentum is in the range of [0, 20%). This indicates that the portfolio return does not increase as both momentums increase simultaneously. However, it can be observed that the investment returns on the right side of the table are significantly higher than those on the left side, which shows that an increase in overnight momentum has a positive impact on portfolio returns.
 
-<img src="https://github.com/user-attachments/assets/0ed3b81f-545e-4f08-a3a0-e05d968429d7" width="400" alt="ew">
+![Q5](../graphic/5_ew_overnight.png)
+
 
 ### Value Weighted-Total Return
 
@@ -115,7 +115,7 @@ This graph shows the impact of the combination of the two types of momentum on i
 2. In each intraday momentum group, as the overnight momentum increases, the total return shows a slight to obvious increasing trend (this is more prominent especially in the 60 - 80% and 80 - 100% intraday momentum groups).
 3. Trend: As both intraday momentum and overnight momentum increase together, the returns of the strategy show a clear increasing trend, indicating that the returns of the strategy are becoming more and more profitable.
 
-<img src="https://github.com/user-attachments/assets/d486d5a2-cc50-4186-99be-ba972ced7eaa" width="400" alt="ew">
+![Q5](../graphic/5_vw.png)
 
 ### Value Weighted-Intraday Return
 
@@ -123,7 +123,8 @@ This graph shows the impact of the combination of the two types of momentum on i
 2. Overnight momentum shows a significant downward trend in all intraday - momentum groups (the returns of high - overnight - momentum groups get worse). Therefore, overnight momentum does not explain positive returns within intraday - momentum buckets. Instead, it is associated with lower intraday returns.
 3. Trend: The rate of return does not increase as both momentums increase. However, when the overnight momentum is in the range of [0, 20%], the average rate of return will increase as the intraday momentum increases.
 
-<img src="https://github.com/user-attachments/assets/aa4df577-cb2d-4e9e-b700-7137324ce737" width="400" alt="ew">
+![Q5](../graphic/5_vw_intraday.png)
+
 
 ### Value Weighted-Overnight Return
 
@@ -131,7 +132,7 @@ This graph shows the impact of the combination of the two types of momentum on i
 2. Overnight momentum shows a significant upward trend across all intraday momentum groups (higher overnight momentum groups yield higher returns). Therefore, overnight momentum does explain the overnight returns within the intraday momentum buckets.
 3. Trend: Overall, as both types of momentum increase, the returns gradually improve.
 
-<img src="https://github.com/user-attachments/assets/251c11b0-e90e-4c36-8971-a204451d559c" width="400" alt="ew">
+![5](../graphic/5_vw_overnight.png)
 
 ## Q6
 
@@ -157,11 +158,12 @@ This graph shows the impact of the combination of the two types of momentum on i
 
 By statistically analyzing the six different methods of calculating returns above, we identified the intervals with the lowest returns in each chart for short - selling and the intervals with the highest returns for long - buying, and obtained a series of portfolio return situations.
 
-The optimal portfolio is the intraday return calculated using equal - weighted method. It involves longing stocks with an intraday momentum of [80%, 100%] and an overnight momentum of [0, 20%], and shorting stocks with an intraday momentum of [0, 20%] and an overnight momentum of [80%, 100%]. The average monthly return rate of this portfolio reaches 0.0578%
+The optimal portfolio is the intraday return calculated using equal - weighted method. It involves longing stocks with an intraday momentum of [80%, 100%] and an overnight momentum of [0, 20%], and shorting stocks with an intraday momentum of [0, 20%] and an overnight momentum of [80%, 100%]. The average monthly return rate of this portfolio reaches 0.0737728102258239%
 
-<img src="https://github.com/user-attachments/assets/0b67d855-3405-4d2c-b0fb-c81a15188893" alt="strategy" style="display: block; width: 50%;">
+![6.4](../graphic/6-new.png)
 
 _Table: Best Strategy and Long-Short Return_
+
 
 ## Q7
 
