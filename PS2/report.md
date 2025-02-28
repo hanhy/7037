@@ -85,7 +85,7 @@ The portfolios are necessary in our quant trading strategies because the portfol
 This graph shows the impact of the combination of the two types of momentum on intraday returns. We can see that, unlike the situation of total returns,  the average return of the portfolio in the lower - left corner is the highest, at 0.035%, and the average return in the upper - right corner is the lowest, at -0.023%.
 
 1. In all overnight momentum groups, the explanatory power of intraday momentum within overnight momentum buckets is weak. There is no consistent increasing or decreasing trend. The returns change irregularly, and the returns of high - intraday - momentum groups may even be negative.
-2. Overnight momentum does not explain positive returns within intraday momentum buckets. Looking at the data in each row, the closer to the left, the larger the data. This indicates that in intraday momentum buckets, the smaller the overnight momentum, the greater the portfolio return. Overnight momentum shows a significant downward trend in all intraday momentum groups. Therefore, **
+2. Overnight momentum does not explain positive returns within intraday momentum buckets. Looking at the data in each row, the closer to the left, the larger the data. This indicates that in intraday momentum buckets, the smaller the overnight momentum, the greater the portfolio return. Overnight momentum shows a significant downward trend in all intraday momentum groups.
 3. Trend: The best - performing portfolio is with overnight momentum in the range of [0, 20%) and intraday momentum in the range of (80%, 100%]. This shows that the return of the portfolio does not increase as both momentums increase simultaneously. However, we can clearly observe that the color in the lower - left side of the graph is significantly darker, indicating that higher intraday momentum and lower overnight momentum can explain intraday returns.
 
 <img src="https://github.com/user-attachments/assets/ff58b4a3-fd9f-4d56-b86d-2aa82b2fa0e4" width="400" alt="ew">
@@ -148,7 +148,9 @@ By statistically analyzing the six different methods of calculating returns abov
 
 The optimal portfolio is the intraday return calculated using equal - weighted method. It involves longing stocks with an intraday momentum of [80%, 100%] and an overnight momentum of [0, 20%], and shorting stocks with an intraday momentum of [0, 20%] and an overnight momentum of [80%, 100%]. The average monthly return rate of this portfolio reaches 0.0578%
 
-<img src="https://github.com/user-attachments/assets/0b67d855-3405-4d2c-b0fb-c81a15188893" alt="strategy" style="display: block; margin: 0 auto; width: 50%;">
+<img src="https://github.com/user-attachments/assets/0b67d855-3405-4d2c-b0fb-c81a15188893" alt="strategy" style="display: block; width: 50%;">
+
+_Table: Best Strategy and Long-Short Return_
 
 ## Q7
 
@@ -208,7 +210,8 @@ In the second task, we implement Fama-MacBeth cross-sectional regression to stud
 - **Take "mom_intraday" as the independent variable and "future_ret" as the dependent variable, save the regression coefficients and form a time series, calculate the average coefficient, standard error and t statistics, as shown in the following figure:**
   `<img width="173" alt="Q8 result2" src="https://github.com/user-attachments/assets/adac07ff-5fef-473b-b22b-5b1d2a7fa9e3" />`
 - **Following the previous question, we visualize the relationship between the calculated regression coefficients in the same way and with the same criteria, marking the time points with large fluctuations for easy comparison and verification of the rules:**
-  `<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/fd3f0d14-7c85-4c89-ab46-cec892d5cf6e" />`
+
+  <img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/fd3f0d14-7c85-4c89-ab46-cec892d5cf6e" />
 - **The regression results displayed in the visualization are similar to those in the previous question. The area of the shadow area where the image fluctuates is almost the same as the previous result. They are also affected by social events and the conclusions are the same.**
 
 ### 8.3 MacBeth Regression Results with Interaction Term
