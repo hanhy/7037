@@ -1,6 +1,17 @@
 # PS2
 
-3035707932 Liu Man Siu;  3036357332 YU HAOYANG;  3036354110 Han Huiyang;  3036360494 Ma Kunmao
+| Student ID | Name |
+| --- | --- |
+| 3035707932 | Liu Man Siu |
+| 3036357332 | YU HAOYANG |
+| 3036354110 | Han Huiyang |
+| 3036360494 | Ma Kunmao |
+
+## GitHub of this project
+
+To make the code review process much more convenient, we have adopted GitHub for our project management, where we've established branch management and put the pull request system into practice. The repository address is: [https://github.com/hanhy/7037](https://github.com/hanhy/7037). This is the details of the pull requests in our project in a week.
+
+<img width="400" alt="Correlation table" src="https://github.com/user-attachments/assets/cf41ee47-f131-416c-96b6-539468d9cd6c" />
 
 ## Q1
 
@@ -40,31 +51,30 @@ The function `calculate_portfolios_and_pnl` is designed to compute portfolio ret
 
 After calculating portfolios and PNL for each portfolio, we produced 3 tables for portfolio sorted by regular momentum, intraday momentum and overnight momentum respectively. Here are the results:
 
-<img width="987" alt="Table for portfolio sorted by regular momentum" src="https://github.com/user-attachments/assets/5a750f17-5e2f-4edf-a1e2-900e3ac9b56d" />
+<img width="1020" alt="Q4-1" src="https://github.com/user-attachments/assets/714885a9-fd9f-40dd-b67b-83ce2313cbea" />
 
 _Table for portfolio sorted by regular momentum_
 
-<img width="1107" alt="Table for portfolio sorted by intraday momentum" src="https://github.com/user-attachments/assets/131196f8-cc54-4063-b29c-ae5ce4963291" />
+<img width="1020" alt="Q4-2" src="https://github.com/user-attachments/assets/873b462c-8c9d-4f34-af4c-fcbffdb8b029" />
 
 _Table for portfolio sorted by intraday momentum_
 
-<img width="1113" alt="Table for portfolio sorted by overnight momentum" src="https://github.com/user-attachments/assets/cf2d1112-815c-42ea-850e-33212c6b3d15" />
-
+<img width="1020" alt="Q4-3" src="https://github.com/user-attachments/assets/62edab38-8023-4747-b6c5-ad26e766faa7" />
 _Table for portfolio sorted by overnight momentum_
 
-Based on the tables produced, the intraday momentum predicts the intraday future returns more than the overnight returns. A hedge portfolio based on past one-month intraday returns earns an average EW intraday return of 4.939% per month with an associated t-statistic of 16.75. However, hedge portfolio based on past one-month intraday returns earns an average EW overnight return of -3.94% per month with an associated t-statistic of -21.658. The intraday momentum also predicts the total returns more than the overnight returns, but less than the intraday future returns.
+Based on the tables produced, the intraday momentum predicts the intraday future returns more than the overnight returns. A hedge portfolio based on past one-month intraday returns earns an average EW intraday return of 7.036% per month with an associated t-statistic of 18.967. However, hedge portfolio based on past one-month intraday returns earns an average EW overnight return of -6.431% per month with an associated t-statistic of -20.337. The intraday momentum also predicts the total returns more than the overnight returns, but less than the intraday future returns.
 
-The overnight momentum predicts the overnight returns more than the intraday future returns. A hedge portfolio based on past one-month overnight returns earns an average EW intraday return of -5.758% per month with an associated t-statistic of -21.75. However, hedge portfolio based on past one-month overnight returns earns an average EW overnight return of 5.733% per month with an associated t-statistic of 26.55. The overnight momentum also predicts the total returns more than the intraday future returns, but less than the overnight returns.
+The overnight momentum predicts the overnight returns more than the intraday future returns. A hedge portfolio based on past one-month overnight returns earns an average EW intraday return of -3.405% per month with an associated t-statistic of -8.843. However, hedge portfolio based on past one-month overnight returns earns an average EW overnight return of 5.441% per month with an associated t-statistic of 18.744. The overnight momentum also predicts the total returns more than the intraday future returns, but less than the overnight returns.
 
 ## Q4 Extra Credit Answer
 
 We first read the Fama French factor file named `h1_factors.parquet`. We converted the `dt` column to datetime format, and sorted the data chronologically. The market return (`Mkt`) is computed as the sum of the market risk premium (`mkt_rf`) and the risk-free rate (`rf`), and all return values are converted to decimal format by dividing by 100. Missing data is removed to ensure consistency. Finally, the daily market returns are aggregated to monthly frequency by computing the cumulative monthly return. The resulting monthly market returns are stored in a new DataFrame, `ff_data_mkt`, which is reset to a standard DataFrame (not indexed by `dt`). This step ensures alignment with monthly momentum data for further analysis.
 
-For regular momentum portfolio data, we first made a copy of the momentum portfolio data (`portfolios_mom['bin']`) and adjusts the date column to align with the end of the month using `MonthEnd(0)`.  The data is then sorted chronologically and merged with the monthly Fama French market return data (`ff_data_mkt`) on the date column. Next, the code filters the data to include only the top portfolio (bin 10) and creates a winner column to identify months where the equal-weighted return (`ew`) of the portfolio exceeds the market return (`Mkt`). We then calculated the monthly fraction of winners in the top portfolio (bin 10) that outperform the market return (`Mkt`) and then computes the average fraction of winners across all months. The average fraction of winners for portfolio 10 that outperforms the market return is 56.3%.
+For regular momentum portfolio data, we first made a copy of the momentum portfolio data (`portfolios_mom['bin']`) and adjusts the date column to align with the end of the month using `MonthEnd(0)`.  The data is then sorted chronologically and merged with the monthly Fama French market return data (`ff_data_mkt`) on the date column. Next, the code filters the data to include only the top portfolio (bin 10) and creates a winner column to identify months where the equal-weighted return (`ew`) of the portfolio exceeds the market return (`Mkt`). We then calculated the monthly fraction of winners in the top portfolio (bin 10) that outperform the market return (`Mkt`) and then computes the average fraction of winners across all months. The average fraction of winners for portfolio 10 that outperforms the market return is 54.9%.
 
-Besides, we also try to see the probability of other portfolios (bins 1 to 9) beating the market return. From the result, all bins from 1 to 9 are having lower probability of winning the market return than bin 10. Also, the average fraction of winner of all bins across all months is 49.46%, which is lower than bin 10. It shows that the portfolio with the highest momentum has a higher chance of beating the market return than other lower momentum's portfolios.
+Besides, we also try to see the probability of other portfolios (bins 1 to 9) beating the market return. From the result, all bins from 1 to 9 are having lower probability of winning the market return than bin 10. Also, the average fraction of winner of all bins across all months is 48.83%, which is lower than bin 10. It shows that the portfolio with the highest momentum has a higher chance of beating the market return than other lower momentum's portfolios.
 
-<img width="122" alt="Bin1to9" src="https://github.com/user-attachments/assets/ba70ed70-ca0a-41e2-a0f7-7f47f6d3763c" />
+<img width="246" alt="Q4 extra" src="https://github.com/user-attachments/assets/f014786d-f5c2-4ec5-8fb3-0865dd85f51e" />
 
 _Table: Average fraction of winner from bin 1 to 9_
 
@@ -85,7 +95,7 @@ The portfolios are necessary in our quant trading strategies because the portfol
 This graph shows the impact of the combination of the two types of momentum on intraday returns. We can see that, unlike the situation of total returns,  the average return of the portfolio in the lower - left corner is the highest, at 0.035%, and the average return in the upper - right corner is the lowest, at -0.023%.
 
 1. In all overnight momentum groups, the explanatory power of intraday momentum within overnight momentum buckets is weak. There is no consistent increasing or decreasing trend. The returns change irregularly, and the returns of high - intraday - momentum groups may even be negative.
-2. Overnight momentum does not explain positive returns within intraday momentum buckets. Looking at the data in each row, the closer to the left, the larger the data. This indicates that in intraday momentum buckets, the smaller the overnight momentum, the greater the portfolio return. Overnight momentum shows a significant downward trend in all intraday momentum groups. Therefore, **
+2. Overnight momentum does not explain positive returns within intraday momentum buckets. Looking at the data in each row, the closer to the left, the larger the data. This indicates that in intraday momentum buckets, the smaller the overnight momentum, the greater the portfolio return. Overnight momentum shows a significant downward trend in all intraday momentum groups.
 3. Trend: The best - performing portfolio is with overnight momentum in the range of [0, 20%) and intraday momentum in the range of (80%, 100%]. This shows that the return of the portfolio does not increase as both momentums increase simultaneously. However, we can clearly observe that the color in the lower - left side of the graph is significantly darker, indicating that higher intraday momentum and lower overnight momentum can explain intraday returns.
 
 <img src="https://github.com/user-attachments/assets/ff58b4a3-fd9f-4d56-b86d-2aa82b2fa0e4" width="400" alt="ew">
@@ -148,7 +158,9 @@ By statistically analyzing the six different methods of calculating returns abov
 
 The optimal portfolio is the intraday return calculated using equal - weighted method. It involves longing stocks with an intraday momentum of [80%, 100%] and an overnight momentum of [0, 20%], and shorting stocks with an intraday momentum of [0, 20%] and an overnight momentum of [80%, 100%]. The average monthly return rate of this portfolio reaches 0.0578%
 
-<img src="https://github.com/user-attachments/assets/0b67d855-3405-4d2c-b0fb-c81a15188893" alt="strategy" style="display: block; margin: 0 auto; width: 50%;">
+<img src="https://github.com/user-attachments/assets/0b67d855-3405-4d2c-b0fb-c81a15188893" alt="strategy" style="display: block; width: 50%;">
+
+_Table: Best Strategy and Long-Short Return_
 
 ## Q7
 
@@ -158,26 +170,71 @@ We have constructed three strategies:
 - A strategy considering only intraday momentum factors (Long 10 / Short 1).
 - A strategy considering only overnight momentum factors (Long 10 / Short 1).
 
+Here is the results:
+
+| Metric           | Strategy                  | Value  |
+|------------------|---------------------------|--------|
+| Sharpe Ratio     | Main Strategy EW          | 0.6355 |
+| Sharpe Ratio     | Main Strategy VW          | 0.4966 |
+| Sharpe Ratio     | Intraday EW               | 0.6239 |
+| Sharpe Ratio     | Intraday VW               | 0.3822 |
+| Sharpe Ratio     | Overnight EW              | -0.1025|
+| Sharpe Ratio     | Overnight VW              | 0.0281 |
+| Alpha            | EW vs Intraday EW         | 0.0068 |
+| Alpha            | VW vs Intraday VW         | 0.0093 |
+| Alpha            | EW vs Overnight EW        | 0.0175 |
+| Alpha            | VW vs Overnight VW        | 0.0163 |
+| Alpha            | EW vs Intraday EW + FF5   | 0.0059 |
+| Alpha            | VW vs Intraday VW + FF5   | 0.0095 |
+| Alpha            | EW vs Overnight EW + FF5  | 0.0148 |
+| Alpha            | VW vs Overnight VW + FF5  | 0.0140 |
+| t-stat           | EW vs Intraday EW         | 1.7426 |
+| t-stat           | VW vs Intraday VW         | 1.8330 |
+| t-stat           | EW vs Overnight EW        | 3.8513 |
+| t-stat           | VW vs Overnight VW        | 2.8500 |
+| t-stat           | EW vs Intraday EW + FF5   | 1.5126 |
+| t-stat           | VW vs Intraday VW + FF5   | 1.8270 |
+| t-stat           | EW vs Overnight EW + FF5  | 3.2259 |
+| t-stat           | VW vs Overnight VW + FF5  | 2.4328 |
+
+**Mean Returns:**  
+- EW Strategy Mean Return: 0.0167  
+- VW Strategy Mean Return: 0.0167  
+
+And the P&L curve:
+![P&L Curve](../graphic/Q7-PL.png)
+
 Comparison results:
 
-- **Overall performance of the main strategy**:
-  The EW and VW cumulative returns of the main strategy show significant growth over the long term (the P&L chart indicates an increase from 0 to approximately 30-35), indicating that the strategy performed very well during the sample period. Comparing to VWstrategy, the EW strategy (blue curve) exhibited the stronger growth.
-  The average monthly returns are 0.0137 (EW) and 0.0152 (VW), both positive, with Sharpe Ratios of 0.5711 (EW) and 0.4737 (VW), indicating a reasonable risk-adjusted return.
-- **Comparison of the main strategy with the two single-momentum factor strategies**:
+### Sharpe Ratio Comparison
+The Sharpe ratios of the three strategies reveal distinct risk-adjusted performance profiles. The Main Strategy (Long 5-5 / Short 1-1) achieves Sharpe ratios of 0.6355 (EW) and 0.4966 (VW), indicating reasonable risk-adjusted returns. 
 
-  - **Sharpe ratio comparison**:
-    The Intraday EW strategy (0.7302) outperforms the Main Strategy EW, suggesting that the intraday momentum may have greater potential for risk-adjusted returns.
-    The Overnight EW (-0.1177) performs poorly. For VW, the Main Strategy (0.4737) outperforms both Intraday (0.3035) and overnight (0.1133), indicating that the value-weighted main strategy is more stable.
-  - **Alpha comparison**:
-    Relative to intraday momentum, the EW Alpha is 0.0031 (t-stat 0.8621, not significant), and the VW Alpha is 0.0089 (t-stat 1.9711, nearly significant), indicating limited excess returns for the Main Strategy over intraday momentum.
-    Relative to overnight momentum, the EW Alpha is 0.0150 (t-stat 3.9481, significant), and the VW Alpha is 0.0135 (t-stat 2.5782, significant), demonstrating that the Main Strategy has a stronger predictive ability for overnight momentum.
-    After adding the FF5 factors, Alpha decreases slightly but remains significant (EW vs Overnight + FF5 Alpha 0.0127, t-stat 3.3387), indicating that the Main Strategy has independent excess returns not fully explained by FF5.
-- **P&L curve observation and analysis**:
-  The main strategy EW and VW curves exhibit significant volatility but trend upward overall, outperforming the Intraday VW and Overnight strategies (which show slower growth or negative returns), supporting the profitability of the Main Strategy.
-  The Intraday EW strategy (green) shows strong growth in the later period, possibly due to specific market conditions being more effective.
+In contrast, the Intraday EW strategy has a Sharpe ratio of 0.6239(EW), slightly less than main strategy, also suggesting stronger potential for risk-adjusted returns driven by intraday momentum, while the Intraday VW strategy lags at 0.3822(VW). 
+
+The Overnight EW strategy performs poorly with a negative Sharpe ratio of -0.1025(EW), and its VW counterpart is only modestly positive at 0.0281(VW), underscoring the Main Strategy’s relative stability, particularly in its value-weighted form.
+
+So in terms of Sharpe ratio, **the main strategy outperformed all the single momentum factor strategy, both on EW and VW**.
+
+### Return Performance of the Strategies
+The Main Strategy demonstrates robust return performance over the sample period, with cumulative returns (P&L) growing from 0 to approximately **80 for EW and 35 for VW version**. The EW strategy (blue curve) shows stronger growth compared to the VW strategy, supported by average monthly returns of 0.0167 (EW) and 0.0167 (VW).
+
+The Intraday EW strategy (green curve) exhibits notable growth, especially in the later period, while its VW counterpart grows more slowly. 
+
+The Overnight strategies underperform, with both EW and VW versions showing weaker growth or even negative returns, highlighting the Main Strategy’s superior profitability.
+
+### Alpha Comparison
+When comparing alphas, the Main Strategy’s excess returns vary by momentum type.
+
+Relative to intraday momentum, the EW Alpha is 0.0068 (t-stat 1.7426, nearly significant), and the VW Alpha is 0.0093 (t-stat 1.8330, nearly significant), suggesting limited outperformance over intraday factors. However, against overnight momentum, the Main Strategy shines with an EW Alpha of 0.0175 (t-stat 3.8513, significant) and a VW Alpha of 0.0163 (t-stat 2.4328, significant), indicating strong predictive power for overnight returns. This demonstrates the Main Strategy’s ability to generate meaningful excess returns, particularly over overnight momentum.
+
+### Alpha with Five-Factor Model (FF5)
+After incorporating the Fama-French Five-Factor (FF5) model, the Main Strategy’s alpha remains significant, though slightly reduced. 
+
+Specifically, the EW Alpha versus overnight momentum with FF5 factors is 0.0148 (t-stat 3.2259), suggesting that the strategy retains independent excess returns not fully explained by the FF5 factors. This resilience highlights the Main Strategy’s robustness and practical utility in quantitative trading, as it continues to deliver statistically significant alpha even under a more comprehensive risk model.
+
 - **Summary**:
 
-  - The main strategy (Long 5-5 / Short 1-1) performs very well, especially in EW form, with significant cumulative returns and a reasonable Sharpe Ratio.
+  - The main strategy (Long 5-5 / Short 1-1) performs very well, both in EW and VW form, with significant cumulative returns and a reasonable Sharpe Ratio.
   - Based on the P&L and Alpha results, the strategy of Long high quantile 5-5 / Short low quintile 1-1 is profitable during the sample period and retains alpha even after controlling for FF5 factors, indicating it has some practical utility in quantitative trading.
 
 ## Q8 (Extra Points)
@@ -187,9 +244,11 @@ In this problem, Fama-MacBeth regression is divided into two stages: the first s
 ### 8.1 Overnight Returns → Future Returns
 
 - **Use the Fama-MacBeth regression model, use overnight_ret_month to predict future returns, Calculate the correlation coefficient and t statistic for regression，the result is**:
-  `<img width="167" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/858a40d1-ca53-4005-9cf8-a6d71329bf5e" />`
+  <img width="167" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/858a40d1-ca53-4005-9cf8-a6d71329bf5e" />
+
 - **In order to intuitively display the regression results and the relationship between the coefficients, visualization is performed to draw a line graph of the coefficients changing over time：**:
-  `<img src="https://github.com/user-attachments/assets/e1c37406-e957-4d9f-b0a4-5eca8253d13f" width="400" alt="ew">`
+  <img src="https://github.com/user-attachments/assets/e1c37406-e957-4d9f-b0a4-5eca8253d13f" width="400" alt="ew">
+
 - **Based on the time series visualization results of the Fama-MacBeth regression coefficient, the following typical characteristics can be observed**:
 
   - **Overall stability**:
@@ -206,9 +265,10 @@ The drivers of the volatility surge in 2001/2014/2020 are consistent with the cy
 In the second task, we implement Fama-MacBeth cross-sectional regression to study the impact of intraday momentum on returns and visualize it. Based on the regression of "overnight returns on future returns" we completed previously, the adjustment variable is the intraday momentum mom_intraday.
 
 - **Take "mom_intraday" as the independent variable and "future_ret" as the dependent variable, save the regression coefficients and form a time series, calculate the average coefficient, standard error and t statistics, as shown in the following figure:**
-  `<img width="173" alt="Q8 result2" src="https://github.com/user-attachments/assets/adac07ff-5fef-473b-b22b-5b1d2a7fa9e3" />`
+  <img width="173" alt="Q8 result2" src="https://github.com/user-attachments/assets/adac07ff-5fef-473b-b22b-5b1d2a7fa9e3" />
 - **Following the previous question, we visualize the relationship between the calculated regression coefficients in the same way and with the same criteria, marking the time points with large fluctuations for easy comparison and verification of the rules:**
-  `<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/fd3f0d14-7c85-4c89-ab46-cec892d5cf6e" />`
+
+  <img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/fd3f0d14-7c85-4c89-ab46-cec892d5cf6e" />
 - **The regression results displayed in the visualization are similar to those in the previous question. The area of the shadow area where the image fluctuates is almost the same as the previous result. They are also affected by social events and the conclusions are the same.**
 
 ### 8.3 MacBeth Regression Results with Interaction Term
@@ -216,7 +276,7 @@ In the second task, we implement Fama-MacBeth cross-sectional regression to stud
 In this question, the above two variables are put into the regression model together, and their interaction terms are added to calculate the regression results and parameters. Compare the changes in coefficients of single variables and after adding interaction terms, and test the significance of interaction terms. In the regression at each time point, it is necessary to include overnight returns, intraday momentum and their interaction terms. Then, calculate the average and t-statistic of these coefficients.
 
 - **Generate a result table and visualize the time series of the coefficients. The three sub-graphs show the time series of each coefficient respectively, and the X-axis uniformly uses date labels with a 5-year interval:**
-  `<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/8b923b62-12ef-4945-9f31-35e57f527ff8" />`
+  <img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/8b923b62-12ef-4945-9f31-35e57f527ff8" />
 - **By comparing the results of the single factor model and the interaction model, the existence of the substitution effect can be verified**:
 
   - **Coefficients**:
@@ -224,7 +284,7 @@ In this question, the above two variables are put into the regression model toge
   - **Interaction**:
     The interaction term explains about 20% of the predictive power of the cause, proving that the substitution effect cannot be ignored.
 - **The regression results show that the coefficient of the interaction term is significantly negative, which indicates that there is a substitution effect between overnight returns and intraday momentum in predicting future returns. Therefore, Our team further uses conditional marginal effects to accurately explain the factor impact and visualizes the results：**
-  `<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/7eb94e6a-44ac-4c36-ae5a-6e4587252757"/>`
+  <img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/7eb94e6a-44ac-4c36-ae5a-6e4587252757"/>
 - **Left figure (marginal effect of overnight return)**:
   When intraday momentum increases (horizontal axis moves to the right), the predictive ability of overnight return continues to decline; When intraday momentum exceeds +0.6, the marginal effect approaches zero (strategy failure critical point)
 - **Right figure (marginal effect of intraday momentum):**
@@ -233,6 +293,8 @@ In this question, the above two variables are put into the regression model toge
 ### Restate the result for 3 regressions:
 
 <img width="353" alt="Q8 result3" src="https://github.com/user-attachments/assets/ecbc7cd4-332d-4d0e-860d-ec1dc489d1b9" />
+
+By comparison, the regression results are similar to those displayed by barplot, and the trend of parameter changes is the same, which supports the above conclusion
 
 ## Q9(Extra Points)
 
