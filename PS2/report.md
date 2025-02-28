@@ -51,20 +51,21 @@ The function `calculate_portfolios_and_pnl` is designed to compute portfolio ret
 
 After calculating portfolios and PNL for each portfolio, we produced 3 tables for portfolio sorted by regular momentum, intraday momentum and overnight momentum respectively. Here are the results:
 
-<img width="1020" alt="Q4-1" src="https://github.com/user-attachments/assets/714885a9-fd9f-40dd-b67b-83ce2313cbea" />
+<img width="1014" alt="Q4-1" src="https://github.com/user-attachments/assets/57cd3d95-e73e-40bb-b34b-8f6913af6dfc" />
 
 _Table for portfolio sorted by regular momentum_
 
-<img width="1020" alt="Q4-2" src="https://github.com/user-attachments/assets/873b462c-8c9d-4f34-af4c-fcbffdb8b029" />
+<img width="1014" alt="Q4-2" src="https://github.com/user-attachments/assets/1afff7c6-13b9-42c9-9283-3b3feb26e98e" />
 
 _Table for portfolio sorted by intraday momentum_
 
-<img width="1020" alt="Q4-3" src="https://github.com/user-attachments/assets/62edab38-8023-4747-b6c5-ad26e766faa7" />
+<img width="1014" alt="Q4-3" src="https://github.com/user-attachments/assets/36029de2-d957-46da-9a8d-842588005cf4" />
+
 _Table for portfolio sorted by overnight momentum_
 
 Based on the tables produced, the intraday momentum predicts the intraday future returns more than the overnight returns. A hedge portfolio based on past one-month intraday returns earns an average EW intraday return of 7.036% per month with an associated t-statistic of 18.967. However, hedge portfolio based on past one-month intraday returns earns an average EW overnight return of -6.431% per month with an associated t-statistic of -20.337. The intraday momentum also predicts the total returns more than the overnight returns, but less than the intraday future returns.
 
-The overnight momentum predicts the overnight returns more than the intraday future returns. A hedge portfolio based on past one-month overnight returns earns an average EW intraday return of -3.405% per month with an associated t-statistic of -8.843. However, hedge portfolio based on past one-month overnight returns earns an average EW overnight return of 5.441% per month with an associated t-statistic of 18.744. The overnight momentum also predicts the total returns more than the intraday future returns, but less than the overnight returns.
+The overnight momentum predicts the overnight returns more than the intraday future returns. A hedge portfolio based on past one-month overnight returns earns an average EW intraday return of -7.457% per month with an associated t-statistic of -22.755. However, hedge portfolio based on past one-month overnight returns earns an average EW overnight return of 7.536% per month with an associated t-statistic of 25.298. The overnight momentum also predicts the total returns more than the intraday future returns, but less than the overnight returns.
 
 ## Q4 Extra Credit Answer
 
