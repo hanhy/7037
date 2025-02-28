@@ -2,6 +2,12 @@
 
 3035707932 Liu Man Siu;  3036357332 YU HAOYANG;  3036354110 Han Huiyang;  3036360494 Ma Kunmao
 
+# GitHub of this project
+
+To make the code review process much more convenient, we have adopted GitHub for our project management, where we've established branch management and put the pull request system into practice. The repository address is: [https://github.com/hanhy/7037](https://github.com/hanhy/7037). This is the details of the pull requests in our project in a week.
+
+
+
 ## Q1
 
 Earnings of companies are typically announced outside of market hours. This practice allows investors time to digest the information and react in an orderly manner when the market reopens, reducing the risk of extreme volatility during trading hours. Stock prices for famous firms may often surge before post-close earnings announcements but then drop after the announcement, according to the research paper published by Harvard Business School in 2023.
