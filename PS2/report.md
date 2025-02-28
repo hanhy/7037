@@ -101,7 +101,8 @@ This graph shows the impact of the combination of the two types of momentum on i
 1. In most overnight momentum groups (especially the 60 - 80% and 80 - 100% groups), as the intraday momentum increases, the total return shows a slight to obvious increasing trend. Therefore, on average, intraday momentum does explain the total return within the overnight momentum buckets, and this effect is more significant especially in the high - overnight - momentum groups.
 2. In each intraday momentum group, as the overnight momentum increases, the total return shows a slight to obvious increasing trend (this is more prominent especially in the 60 - 80% and 80 - 100% intraday momentum groups).
 3. Trend: As both intraday momentum and overnight momentum increase together, the returns of the strategy show a clear increasing trend, indicating that the returns of the strategy are becoming more and more profitable.
-   `<img src="https://github.com/user-attachments/assets/d486d5a2-cc50-4186-99be-ba972ced7eaa" width="400" alt="ew">`
+   
+<img src="https://github.com/user-attachments/assets/d486d5a2-cc50-4186-99be-ba972ced7eaa" width="400" alt="ew">
 
 ### Value Weighted-Intraday Return
 
