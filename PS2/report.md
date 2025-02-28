@@ -170,26 +170,71 @@ We have constructed three strategies:
 - A strategy considering only intraday momentum factors (Long 10 / Short 1).
 - A strategy considering only overnight momentum factors (Long 10 / Short 1).
 
+Here is the results:
+
+| Metric           | Strategy                  | Value  |
+|------------------|---------------------------|--------|
+| Sharpe Ratio     | Main Strategy EW          | 0.6355 |
+| Sharpe Ratio     | Main Strategy VW          | 0.4966 |
+| Sharpe Ratio     | Intraday EW               | 0.6239 |
+| Sharpe Ratio     | Intraday VW               | 0.3822 |
+| Sharpe Ratio     | Overnight EW              | -0.1025|
+| Sharpe Ratio     | Overnight VW              | 0.0281 |
+| Alpha            | EW vs Intraday EW         | 0.0068 |
+| Alpha            | VW vs Intraday VW         | 0.0093 |
+| Alpha            | EW vs Overnight EW        | 0.0175 |
+| Alpha            | VW vs Overnight VW        | 0.0163 |
+| Alpha            | EW vs Intraday EW + FF5   | 0.0059 |
+| Alpha            | VW vs Intraday VW + FF5   | 0.0095 |
+| Alpha            | EW vs Overnight EW + FF5  | 0.0148 |
+| Alpha            | VW vs Overnight VW + FF5  | 0.0140 |
+| t-stat           | EW vs Intraday EW         | 1.7426 |
+| t-stat           | VW vs Intraday VW         | 1.8330 |
+| t-stat           | EW vs Overnight EW        | 3.8513 |
+| t-stat           | VW vs Overnight VW        | 2.8500 |
+| t-stat           | EW vs Intraday EW + FF5   | 1.5126 |
+| t-stat           | VW vs Intraday VW + FF5   | 1.8270 |
+| t-stat           | EW vs Overnight EW + FF5  | 3.2259 |
+| t-stat           | VW vs Overnight VW + FF5  | 2.4328 |
+
+**Mean Returns:**  
+- EW Strategy Mean Return: 0.0167  
+- VW Strategy Mean Return: 0.0167  
+
+And the P&L curve:
+![P&L Curve](../graphic/Q7-PL.png)
+
 Comparison results:
 
-- **Overall performance of the main strategy**:
-  The EW and VW cumulative returns of the main strategy show significant growth over the long term (the P&L chart indicates an increase from 0 to approximately 30-35), indicating that the strategy performed very well during the sample period. Comparing to VWstrategy, the EW strategy (blue curve) exhibited the stronger growth.
-  The average monthly returns are 0.0137 (EW) and 0.0152 (VW), both positive, with Sharpe Ratios of 0.5711 (EW) and 0.4737 (VW), indicating a reasonable risk-adjusted return.
-- **Comparison of the main strategy with the two single-momentum factor strategies**:
+### Sharpe Ratio Comparison
+The Sharpe ratios of the three strategies reveal distinct risk-adjusted performance profiles. The Main Strategy (Long 5-5 / Short 1-1) achieves Sharpe ratios of 0.6355 (EW) and 0.4966 (VW), indicating reasonable risk-adjusted returns. 
 
-  - **Sharpe ratio comparison**:
-    The Intraday EW strategy (0.7302) outperforms the Main Strategy EW, suggesting that the intraday momentum may have greater potential for risk-adjusted returns.
-    The Overnight EW (-0.1177) performs poorly. For VW, the Main Strategy (0.4737) outperforms both Intraday (0.3035) and overnight (0.1133), indicating that the value-weighted main strategy is more stable.
-  - **Alpha comparison**:
-    Relative to intraday momentum, the EW Alpha is 0.0031 (t-stat 0.8621, not significant), and the VW Alpha is 0.0089 (t-stat 1.9711, nearly significant), indicating limited excess returns for the Main Strategy over intraday momentum.
-    Relative to overnight momentum, the EW Alpha is 0.0150 (t-stat 3.9481, significant), and the VW Alpha is 0.0135 (t-stat 2.5782, significant), demonstrating that the Main Strategy has a stronger predictive ability for overnight momentum.
-    After adding the FF5 factors, Alpha decreases slightly but remains significant (EW vs Overnight + FF5 Alpha 0.0127, t-stat 3.3387), indicating that the Main Strategy has independent excess returns not fully explained by FF5.
-- **P&L curve observation and analysis**:
-  The main strategy EW and VW curves exhibit significant volatility but trend upward overall, outperforming the Intraday VW and Overnight strategies (which show slower growth or negative returns), supporting the profitability of the Main Strategy.
-  The Intraday EW strategy (green) shows strong growth in the later period, possibly due to specific market conditions being more effective.
+In contrast, the Intraday EW strategy has a Sharpe ratio of 0.6239(EW), slightly less than main strategy, also suggesting stronger potential for risk-adjusted returns driven by intraday momentum, while the Intraday VW strategy lags at 0.3822(VW). 
+
+The Overnight EW strategy performs poorly with a negative Sharpe ratio of -0.1025(EW), and its VW counterpart is only modestly positive at 0.0281(VW), underscoring the Main Strategy’s relative stability, particularly in its value-weighted form.
+
+So in terms of Sharpe ratio, **the main strategy outperformed all the single momentum factor strategy, both on EW and VW**.
+
+### Return Performance of the Strategies
+The Main Strategy demonstrates robust return performance over the sample period, with cumulative returns (P&L) growing from 0 to approximately **80 for EW and 35 for VW version**. The EW strategy (blue curve) shows stronger growth compared to the VW strategy, supported by average monthly returns of 0.0167 (EW) and 0.0167 (VW).
+
+The Intraday EW strategy (green curve) exhibits notable growth, especially in the later period, while its VW counterpart grows more slowly. 
+
+The Overnight strategies underperform, with both EW and VW versions showing weaker growth or even negative returns, highlighting the Main Strategy’s superior profitability.
+
+### Alpha Comparison
+When comparing alphas, the Main Strategy’s excess returns vary by momentum type.
+
+Relative to intraday momentum, the EW Alpha is 0.0068 (t-stat 1.7426, nearly significant), and the VW Alpha is 0.0093 (t-stat 1.8330, nearly significant), suggesting limited outperformance over intraday factors. However, against overnight momentum, the Main Strategy shines with an EW Alpha of 0.0175 (t-stat 3.8513, significant) and a VW Alpha of 0.0163 (t-stat 2.4328, significant), indicating strong predictive power for overnight returns. This demonstrates the Main Strategy’s ability to generate meaningful excess returns, particularly over overnight momentum.
+
+### Alpha with Five-Factor Model (FF5)
+After incorporating the Fama-French Five-Factor (FF5) model, the Main Strategy’s alpha remains significant, though slightly reduced. 
+
+Specifically, the EW Alpha versus overnight momentum with FF5 factors is 0.0148 (t-stat 3.2259), suggesting that the strategy retains independent excess returns not fully explained by the FF5 factors. This resilience highlights the Main Strategy’s robustness and practical utility in quantitative trading, as it continues to deliver statistically significant alpha even under a more comprehensive risk model.
+
 - **Summary**:
 
-  - The main strategy (Long 5-5 / Short 1-1) performs very well, especially in EW form, with significant cumulative returns and a reasonable Sharpe Ratio.
+  - The main strategy (Long 5-5 / Short 1-1) performs very well, both in EW and VW form, with significant cumulative returns and a reasonable Sharpe Ratio.
   - Based on the P&L and Alpha results, the strategy of Long high quantile 5-5 / Short low quintile 1-1 is profitable during the sample period and retains alpha even after controlling for FF5 factors, indicating it has some practical utility in quantitative trading.
 
 ## Q8 (Extra Points)
