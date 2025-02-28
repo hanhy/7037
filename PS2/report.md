@@ -1,12 +1,17 @@
 # PS2
 
-3035707932 Liu Man Siu;  3036357332 YU HAOYANG;  3036354110 Han Huiyang;  3036360494 Ma Kunmao
----
+| Student ID | Name |
+| --- | --- |
+| 3035707932 | Liu Man Siu |
+| 3036357332 | YU HAOYANG |
+| 3036354110 | Han Huiyang |
+| 3036360494 | Ma Kunmao |
+
 ## GitHub of this project
 
 To make the code review process much more convenient, we have adopted GitHub for our project management, where we've established branch management and put the pull request system into practice. The repository address is: [https://github.com/hanhy/7037](https://github.com/hanhy/7037). This is the details of the pull requests in our project in a week.
 
-<img width="600" alt="Correlation table" src="https://github.com/user-attachments/assets/cf41ee47-f131-416c-96b6-539468d9cd6c" />
+<img width="400" alt="Correlation table" src="https://github.com/user-attachments/assets/cf41ee47-f131-416c-96b6-539468d9cd6c" />
 
 ## Q1
 
@@ -195,9 +200,11 @@ In this problem, Fama-MacBeth regression is divided into two stages: the first s
 ### 8.1 Overnight Returns → Future Returns
 
 - **Use the Fama-MacBeth regression model, use overnight_ret_month to predict future returns, Calculate the correlation coefficient and t statistic for regression，the result is**:
-  `<img width="167" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/858a40d1-ca53-4005-9cf8-a6d71329bf5e" />`
+  <img width="167" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/858a40d1-ca53-4005-9cf8-a6d71329bf5e" />
+
 - **In order to intuitively display the regression results and the relationship between the coefficients, visualization is performed to draw a line graph of the coefficients changing over time：**:
-  `<img src="https://github.com/user-attachments/assets/e1c37406-e957-4d9f-b0a4-5eca8253d13f" width="400" alt="ew">`
+  <img src="https://github.com/user-attachments/assets/e1c37406-e957-4d9f-b0a4-5eca8253d13f" width="400" alt="ew">
+
 - **Based on the time series visualization results of the Fama-MacBeth regression coefficient, the following typical characteristics can be observed**:
 
   - **Overall stability**:
@@ -214,7 +221,7 @@ The drivers of the volatility surge in 2001/2014/2020 are consistent with the cy
 In the second task, we implement Fama-MacBeth cross-sectional regression to study the impact of intraday momentum on returns and visualize it. Based on the regression of "overnight returns on future returns" we completed previously, the adjustment variable is the intraday momentum mom_intraday.
 
 - **Take "mom_intraday" as the independent variable and "future_ret" as the dependent variable, save the regression coefficients and form a time series, calculate the average coefficient, standard error and t statistics, as shown in the following figure:**
-  `<img width="173" alt="Q8 result2" src="https://github.com/user-attachments/assets/adac07ff-5fef-473b-b22b-5b1d2a7fa9e3" />`
+  <img width="173" alt="Q8 result2" src="https://github.com/user-attachments/assets/adac07ff-5fef-473b-b22b-5b1d2a7fa9e3" />
 - **Following the previous question, we visualize the relationship between the calculated regression coefficients in the same way and with the same criteria, marking the time points with large fluctuations for easy comparison and verification of the rules:**
 
   <img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/fd3f0d14-7c85-4c89-ab46-cec892d5cf6e" />
@@ -225,7 +232,7 @@ In the second task, we implement Fama-MacBeth cross-sectional regression to stud
 In this question, the above two variables are put into the regression model together, and their interaction terms are added to calculate the regression results and parameters. Compare the changes in coefficients of single variables and after adding interaction terms, and test the significance of interaction terms. In the regression at each time point, it is necessary to include overnight returns, intraday momentum and their interaction terms. Then, calculate the average and t-statistic of these coefficients.
 
 - **Generate a result table and visualize the time series of the coefficients. The three sub-graphs show the time series of each coefficient respectively, and the X-axis uniformly uses date labels with a 5-year interval:**
-  `<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/8b923b62-12ef-4945-9f31-35e57f527ff8" />`
+  <img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/8b923b62-12ef-4945-9f31-35e57f527ff8" />
 - **By comparing the results of the single factor model and the interaction model, the existence of the substitution effect can be verified**:
 
   - **Coefficients**:
@@ -233,7 +240,7 @@ In this question, the above two variables are put into the regression model toge
   - **Interaction**:
     The interaction term explains about 20% of the predictive power of the cause, proving that the substitution effect cannot be ignored.
 - **The regression results show that the coefficient of the interaction term is significantly negative, which indicates that there is a substitution effect between overnight returns and intraday momentum in predicting future returns. Therefore, Our team further uses conditional marginal effects to accurately explain the factor impact and visualizes the results：**
-  `<img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/7eb94e6a-44ac-4c36-ae5a-6e4587252757"/>`
+  <img width="400" alt="Q 8 reslts 1" src="https://github.com/user-attachments/assets/7eb94e6a-44ac-4c36-ae5a-6e4587252757"/>
 - **Left figure (marginal effect of overnight return)**:
   When intraday momentum increases (horizontal axis moves to the right), the predictive ability of overnight return continues to decline; When intraday momentum exceeds +0.6, the marginal effect approaches zero (strategy failure critical point)
 - **Right figure (marginal effect of intraday momentum):**
