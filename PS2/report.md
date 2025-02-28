@@ -1,12 +1,12 @@
 # PS2
 
 3035707932 Liu Man Siu;  3036357332 YU HAOYANG;  3036354110 Han Huiyang;  3036360494 Ma Kunmao
-
-# GitHub of this project
+---
+## GitHub of this project
 
 To make the code review process much more convenient, we have adopted GitHub for our project management, where we've established branch management and put the pull request system into practice. The repository address is: [https://github.com/hanhy/7037](https://github.com/hanhy/7037). This is the details of the pull requests in our project in a week.
 
-
+<img width="600" alt="Correlation table" src="https://github.com/user-attachments/assets/cf41ee47-f131-416c-96b6-539468d9cd6c" />
 
 ## Q1
 
