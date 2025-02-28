@@ -51,31 +51,30 @@ The function `calculate_portfolios_and_pnl` is designed to compute portfolio ret
 
 After calculating portfolios and PNL for each portfolio, we produced 3 tables for portfolio sorted by regular momentum, intraday momentum and overnight momentum respectively. Here are the results:
 
-<img width="987" alt="Table for portfolio sorted by regular momentum" src="https://github.com/user-attachments/assets/5a750f17-5e2f-4edf-a1e2-900e3ac9b56d" />
+<img width="1020" alt="Q4-1" src="https://github.com/user-attachments/assets/714885a9-fd9f-40dd-b67b-83ce2313cbea" />
 
 _Table for portfolio sorted by regular momentum_
 
-<img width="1107" alt="Table for portfolio sorted by intraday momentum" src="https://github.com/user-attachments/assets/131196f8-cc54-4063-b29c-ae5ce4963291" />
+<img width="1020" alt="Q4-2" src="https://github.com/user-attachments/assets/873b462c-8c9d-4f34-af4c-fcbffdb8b029" />
 
 _Table for portfolio sorted by intraday momentum_
 
-<img width="1113" alt="Table for portfolio sorted by overnight momentum" src="https://github.com/user-attachments/assets/cf2d1112-815c-42ea-850e-33212c6b3d15" />
-
+<img width="1020" alt="Q4-3" src="https://github.com/user-attachments/assets/62edab38-8023-4747-b6c5-ad26e766faa7" />
 _Table for portfolio sorted by overnight momentum_
 
-Based on the tables produced, the intraday momentum predicts the intraday future returns more than the overnight returns. A hedge portfolio based on past one-month intraday returns earns an average EW intraday return of 4.939% per month with an associated t-statistic of 16.75. However, hedge portfolio based on past one-month intraday returns earns an average EW overnight return of -3.94% per month with an associated t-statistic of -21.658. The intraday momentum also predicts the total returns more than the overnight returns, but less than the intraday future returns.
+Based on the tables produced, the intraday momentum predicts the intraday future returns more than the overnight returns. A hedge portfolio based on past one-month intraday returns earns an average EW intraday return of 7.036% per month with an associated t-statistic of 18.967. However, hedge portfolio based on past one-month intraday returns earns an average EW overnight return of -6.431% per month with an associated t-statistic of -20.337. The intraday momentum also predicts the total returns more than the overnight returns, but less than the intraday future returns.
 
-The overnight momentum predicts the overnight returns more than the intraday future returns. A hedge portfolio based on past one-month overnight returns earns an average EW intraday return of -5.758% per month with an associated t-statistic of -21.75. However, hedge portfolio based on past one-month overnight returns earns an average EW overnight return of 5.733% per month with an associated t-statistic of 26.55. The overnight momentum also predicts the total returns more than the intraday future returns, but less than the overnight returns.
+The overnight momentum predicts the overnight returns more than the intraday future returns. A hedge portfolio based on past one-month overnight returns earns an average EW intraday return of -3.405% per month with an associated t-statistic of -8.843. However, hedge portfolio based on past one-month overnight returns earns an average EW overnight return of 5.441% per month with an associated t-statistic of 18.744. The overnight momentum also predicts the total returns more than the intraday future returns, but less than the overnight returns.
 
 ## Q4 Extra Credit Answer
 
 We first read the Fama French factor file named `h1_factors.parquet`. We converted the `dt` column to datetime format, and sorted the data chronologically. The market return (`Mkt`) is computed as the sum of the market risk premium (`mkt_rf`) and the risk-free rate (`rf`), and all return values are converted to decimal format by dividing by 100. Missing data is removed to ensure consistency. Finally, the daily market returns are aggregated to monthly frequency by computing the cumulative monthly return. The resulting monthly market returns are stored in a new DataFrame, `ff_data_mkt`, which is reset to a standard DataFrame (not indexed by `dt`). This step ensures alignment with monthly momentum data for further analysis.
 
-For regular momentum portfolio data, we first made a copy of the momentum portfolio data (`portfolios_mom['bin']`) and adjusts the date column to align with the end of the month using `MonthEnd(0)`.  The data is then sorted chronologically and merged with the monthly Fama French market return data (`ff_data_mkt`) on the date column. Next, the code filters the data to include only the top portfolio (bin 10) and creates a winner column to identify months where the equal-weighted return (`ew`) of the portfolio exceeds the market return (`Mkt`). We then calculated the monthly fraction of winners in the top portfolio (bin 10) that outperform the market return (`Mkt`) and then computes the average fraction of winners across all months. The average fraction of winners for portfolio 10 that outperforms the market return is 56.3%.
+For regular momentum portfolio data, we first made a copy of the momentum portfolio data (`portfolios_mom['bin']`) and adjusts the date column to align with the end of the month using `MonthEnd(0)`.  The data is then sorted chronologically and merged with the monthly Fama French market return data (`ff_data_mkt`) on the date column. Next, the code filters the data to include only the top portfolio (bin 10) and creates a winner column to identify months where the equal-weighted return (`ew`) of the portfolio exceeds the market return (`Mkt`). We then calculated the monthly fraction of winners in the top portfolio (bin 10) that outperform the market return (`Mkt`) and then computes the average fraction of winners across all months. The average fraction of winners for portfolio 10 that outperforms the market return is 54.9%.
 
-Besides, we also try to see the probability of other portfolios (bins 1 to 9) beating the market return. From the result, all bins from 1 to 9 are having lower probability of winning the market return than bin 10. Also, the average fraction of winner of all bins across all months is 49.46%, which is lower than bin 10. It shows that the portfolio with the highest momentum has a higher chance of beating the market return than other lower momentum's portfolios.
+Besides, we also try to see the probability of other portfolios (bins 1 to 9) beating the market return. From the result, all bins from 1 to 9 are having lower probability of winning the market return than bin 10. Also, the average fraction of winner of all bins across all months is 48.83%, which is lower than bin 10. It shows that the portfolio with the highest momentum has a higher chance of beating the market return than other lower momentum's portfolios.
 
-<img width="122" alt="Bin1to9" src="https://github.com/user-attachments/assets/ba70ed70-ca0a-41e2-a0f7-7f47f6d3763c" />
+<img width="246" alt="Q4 extra" src="https://github.com/user-attachments/assets/f014786d-f5c2-4ec5-8fb3-0865dd85f51e" />
 
 _Table: Average fraction of winner from bin 1 to 9_
 
@@ -249,6 +248,8 @@ In this question, the above two variables are put into the regression model toge
 ### Restate the result for 3 regressions:
 
 <img width="353" alt="Q8 result3" src="https://github.com/user-attachments/assets/ecbc7cd4-332d-4d0e-860d-ec1dc489d1b9" />
+
+By comparison, the regression results are similar to those displayed by barplot, and the trend of parameter changes is the same, which supports the above conclusion
 
 ## Q9(Extra Points)
 
