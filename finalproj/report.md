@@ -19,5 +19,4 @@ Handling Overlaps: For the 6-month holding period (H=6), returns overlap across 
 - Each month, a new strategy is formed based on the prior 6-month returns.
 - The holding period return is the average of six sub-strategies (formed in the current and prior five months), effectively rebalancing 1/6 of the portfolio monthly and avoiding overlapping observations in statistical tests.
 
-![1741679115630](image/report/1741679115630.png)
-![1741679134905](image/report/1741679134905.png)
+
