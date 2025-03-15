@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f9f73457-ce23-47dd-9cd0-5b6bc74e5178" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Final project/final project table 1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Final project/final project table 1.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +93,23 @@
       <option name="project" value="LOCAL" />
       <updated>1741960755302</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Finished table 1 for 4 periods">
+      <option name="closed" value="true" />
+      <created>1742005597411</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1742005597412</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Change the classification of factors, size &amp; firm age">
+      <option name="closed" value="true" />
+      <created>1742009318585</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1742009318585</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -106,6 +121,8 @@
     <MESSAGE value="Change resampling method, and add one more sample period to Table 1" />
     <MESSAGE value="Update Table 1 calculation for average returns, ff3 and ff5 in 'all' period" />
     <MESSAGE value="CHANGE DATE OF 1963 JULY 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="CHANGE DATE OF 1963 JULY 1" />
+    <MESSAGE value="Finished table 1 for 4 periods" />
+    <MESSAGE value="Change the classification of factors, size &amp; firm age" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change the classification of factors, size &amp; firm age" />
   </component>
 </project>
