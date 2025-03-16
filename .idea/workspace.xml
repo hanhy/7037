@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f9f73457-ce23-47dd-9cd0-5b6bc74e5178" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Final project/final project table 1.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/Final project/final project table 1.ipynb" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +19,9 @@
         <option value="Jupyter Notebook" />
       </list>
     </option>
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="main" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -109,7 +113,23 @@
       <option name="project" value="LOCAL" />
       <updated>1742009318585</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Table 1 finished">
+      <option name="closed" value="true" />
+      <created>1742025065795</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1742025065795</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Table 1 warnings muted, minor changes in YE &amp; ME">
+      <option name="closed" value="true" />
+      <created>1742026560663</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1742026560664</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -123,6 +143,8 @@
     <MESSAGE value="CHANGE DATE OF 1963 JULY 1" />
     <MESSAGE value="Finished table 1 for 4 periods" />
     <MESSAGE value="Change the classification of factors, size &amp; firm age" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change the classification of factors, size &amp; firm age" />
+    <MESSAGE value="Table 1 finished" />
+    <MESSAGE value="Table 1 warnings muted, minor changes in YE &amp; ME" />
+    <option name="LAST_COMMIT_MESSAGE" value="Table 1 warnings muted, minor changes in YE &amp; ME" />
   </component>
 </project>
